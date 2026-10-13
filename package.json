@@ -1,0 +1,19 @@
+{
+  "name": "nexpm",
+  "private": true,
+  "version": "0.9.6-dev",
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace @nexpm/api & npm run dev --workspace @nexpm/web & wait",
+    "build": "npm run build --workspace @nexpm/api && npm run build --workspace @nexpm/web",
+    "lint": "npm run check --workspace @nexpm/api && npm run check --workspace @nexpm/web",
+    "test": "npm run test --workspace @nexpm/api",
+    "seed": "npm run seed --workspace @nexpm/api",
+    "migrate:workspaces": "npm run migrate:workspaces --workspace @nexpm/api"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
